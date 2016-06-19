@@ -8,20 +8,16 @@
 </head>
 <body>
 
-    <form action="procesar.php" method="post" accept-charset="utf-8" name="frm">
+    <form action="procesar.php" method="post" accept-charset="utf-8" name="frm" enctype="multipart/form-data">
     <table>
-        <caption>Logueo de usuarios</caption>
+        <caption>Subir imagenes</caption>
         <tbody>
-                <td>USUARIO:</td>
-                <td><input type="text" name="user"></td>
-            </tr>
-            <tr>
-                <td>PASSWORD:</td>
-                <td><input type="password" name="pw"></td>
+                <td>Archivo imagen:</td>
+                <td><input type="file" name="foto"></td>
             </tr>
             <tr>
                 <td>
-                   <input type="submit" value="Entrar"> 
+                   <input type="submit" value="Upload"> 
                 </td>
             </tr>
         </tbody>
