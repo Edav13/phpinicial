@@ -9,9 +9,8 @@
 <body>
 
     <form action="procesar.php" method="post" accept-charset="utf-8" name="frm">
-        <input type="text" name="nombre"><br>
-        <textarea name="comentario"></textarea><br>
-        <input type="submit" value="Guardar datos">
+        <input type="file" name="archivo"><br>
+        <input type="submit" value="Borrar">
     </form>
 </body>
 </html>
