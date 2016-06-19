@@ -1,12 +1,11 @@
 <?php
-    $carpeta = "files/";
-    opendir($carpeta);
-    $destino = $carpeta.$_FILES['foto']['name'];
-    copy($_FILES['foto']['tmp_name'], $destino);
-    echo "Archivo subido exitosamente";
-    $nombre = $_FILES['foto']['name'];
-    echo "<img src=\"files/$nombre\"><br>";
-    echo $_FILES['foto']['name']."<br>";
-    echo $_FILES['foto']['size']." Bytes<br>";
-    echo $_FILES['foto']['type']."<br>";
+    if (isset($_POST['asunto']) && !empty($_POST['asunto']) && isset($_POST['mensaje']) && !empty($_POST['mensaje'])) {
+        
+        $destino = "edav13@hotmail.com";
+        $desde = "From: ". "CodigoFacilito";
+        mail($destino, $_POST['asunto'], $_POST['mensaje'], $desde);
+        echo "Correo enviado.";
+    }else{
+        echo "Problemas al enviar";
+    }
 ?>
