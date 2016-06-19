@@ -9,8 +9,8 @@
 <body>
 
     <form action="procesar.php" method="post" accept-charset="utf-8" name="frm">
-        <input type="text" name="nombre"><br>
-        <input type="submit" value="Seleccionar">
+        <input type="text" name="nombre">
+        <input type="submit" value="Borrar">
     </form>
 </body>
 </html>
