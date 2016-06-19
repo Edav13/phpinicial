@@ -1,13 +1,20 @@
 <?php
     include("conexion.php");
-    $conectar = mysql_connect($host, $user, $pw) or die ("Problemas de server.");
-    mysql_select_db($db, $conectar) or die ("Problemas de DDBB.");
+    if (isset($_POST['nombre']) && !empty($_POST['nombre']) && isset($_POST['user']) && !empty($_POST['user']) && isset($_POST['pw']) && !empty($_POST['pw']) && isset($_POST['pw2']) && !empty($_POST['pw2']) && isset($_POST['email']) && !empty($_POST['email']) && ($_POST['pw2'] == $_POST['pw'])) {
+            $conectar = mysql_connect($host, $user, $pw) or die ("Problemas de server.");
+            mysql_select_db($db, $conectar) or die ("Problemas de DDBB.");
+            $consulta = mysql_query("INSERT INTO registro (NOMBRE, USER, PW, EMAIL) VALUES ('$_POST[nombre]', '$_POST[user]', '$_POST[pw]', '$_POST[email]')", $conectar) or die ("Problemas en insertado: ". mysql_error());
+            echo "Datos guardados <br>";
+            echo "Nombre:".$_POST['nombre']."<br>";
+            echo "Usuario:".$_POST['user']."<br>";
+            echo "Password:".$_POST['pw']."<br>";
+            echo "E-mail:".$_POST['email'];
 
-    $consulta = mysql_query("SELECT ID FROM codigof WHERE NOMBRE='$_POST[nombre]'", $conectar) or die ("Problemas en consulta: ". mysql_error());
-    if($registro = mysql_fetch_array($consulta)){
-        mysql_query("DELETE FROM codigof WHERE NOMBRE = '$_POST[nombre]'", $conectar);
-        echo "Datos eliminados.";
     }else{
-        echo "Datos no eliminados.";
+        echo "Verifica que llenaste los campos y los passwords coinciden";
     }
+
+    
+
+    
 ?>
