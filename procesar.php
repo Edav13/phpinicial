@@ -1,11 +1,11 @@
 <?php
-    if (isset($_POST['asunto']) && !empty($_POST['asunto']) && isset($_POST['mensaje']) && !empty($_POST['mensaje'])) {
-        
-        $destino = "edav13@hotmail.com";
-        $desde = "From: ". "CodigoFacilito";
-        mail($destino, $_POST['asunto'], $_POST['mensaje'], $desde);
-        echo "Correo enviado.";
-    }else{
-        echo "Problemas al enviar";
-    }
+
+    include("conexion.php");
+    $conectar = mysql_connect($host, $user, $pw) or die ("Problemas de server.");
+    mysql_select_db($db, $conectar) or die ("Problemas de DDBB.");
+    mysql_query("UPDATE registro set NOMBRE = '$_POST[nuevo]' WHERE NOMBRE = '$_POST[viejo]'", $conectar) or die ("Problemas en consutal: ". mysql_error());
+    echo "Datos actualizados";
+    
+
+    
 ?>

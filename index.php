@@ -10,19 +10,19 @@
 
     <form action="procesar.php" method="post" accept-charset="utf-8" name="frm" enctype="multipart/form-data">
     <table>
-        <caption>Enviar a correo</caption>
+        <caption>Actualizar datos</caption>
         <tbody>
             <tr>
-                <td>Asunto:</td>
-                <td><input type="text" name="asunto"></td>
+                <td>Nombre viejo:</td>
+                <td><input type="text" name="viejo"></td>
             </tr>
             <tr>
-                <td>Mensaje:</td>
-                <td><textarea name="mensaje"></textarea></td>
+                <td>Nombre nuevo:</td>
+                <td><input type="text" name="nuevo"></td>
             </tr>
             <tr>
                 <td>
-                   <input type="submit" value="Enviar correo"> 
+                   <input type="submit" value="Actualizar"> 
                 </td>
             </tr>
         </tbody>
