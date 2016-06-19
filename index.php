@@ -10,8 +10,7 @@
 
     <form action="procesar.php" method="post" accept-charset="utf-8" name="frm">
         <input type="text" name="nombre"><br>
-        <input type="password" name="pw"><br>
-        <input type="submit" value="Insertar datos">
+        <input type="submit" value="Seleccionar">
     </form>
 </body>
 </html>
